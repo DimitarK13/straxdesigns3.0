@@ -1,0 +1,350 @@
+<%- include('partials/header.ejs') %> <%- include('partials/navigation.ejs') %>
+
+<div class="wrapper">
+  <div class="flex-big">
+    <div class="hero">
+      <h1 class="heading gradient-text fade-in">Order a Project</h1>
+    </div>
+    <form action="/" method="post">
+      <div class="main-tab fade-in">
+        <label for="name" class="sub-heading font-400">Your Name:</label>
+        <input
+          class="input_order-a-project"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+        />
+        <label for="email" class="sub-heading font-400">Your Email:</label>
+        <input
+          class="input_order-a-project"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+        />
+        <label for="project" class="sub-heading font-400">Project Type:</label>
+        <select name="project" id="project" class="input_order-a-project">
+          <option value="web-design">Web Design</option>
+          <option value="graphic-design">Graphic Design</option>
+          <option value="nbo">NBO</option>
+        </select>
+      </div>
+
+      <div class="tab web-design fade-in" id="web-design">
+        <p class="sub-heading font-400">Web Design Project</p>
+        <div class="item">
+          <input type="radio" name="web_design" value="Basic" id="basic" />
+          <label for="basic" class="font-100">Basic</label>
+        </div>
+        <div class="item">
+          <input
+            type="radio"
+            name="web_design"
+            value="Standard"
+            id="standard"
+          />
+          <label for="standard" class="font-100">Standard</label>
+        </div>
+        <div class="item">
+          <input type="radio" name="web_design" value="Premium" id="premium" />
+          <label for="premium" class="font-100">Premium</label>
+        </div>
+      </div>
+
+      <div class="tab graphic-design fade-in" id="graphic-design">
+        <p class="sub-heading font-400">Graphic Design Project</p>
+        <div class="item">
+          <input type="checkbox" name="graphic_design" value="Logo" id="logo" />
+          <label class="font-100" for="logo">Logo</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design"
+            value="Flyer"
+            id="flyer"
+          />
+          <label class="font-100" for="flyer">Flyer</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design"
+            value="Poster"
+            id="poster"
+          />
+          <label class="font-100" for="poster">Poster</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design"
+            value="Brochure"
+            id="brochure"
+          />
+          <label class="font-100" for="brochure">Brochure</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design"
+            value="Business Cards"
+            id="business-cards"
+          />
+          <label class="font-100" for="business-cards">Business Cards</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design"
+            value="Identification Cards"
+            id="id-cards"
+          />
+          <label class="font-100" for="id-cards">Identification Cards</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design"
+            value="Catalogue"
+            id="catalogue"
+          />
+          <label class="font-100" for="catalogue">Catalogue</label>
+        </div>
+        <div class="item">
+          <input type="checkbox" name="graphic_design" value="Menu" id="menu" />
+          <label class="font-100" for="menu">Menu</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design"
+            value="Instagram Post"
+            id="insta-post"
+          />
+          <label class="font-100" for="insta-post">Instagram Post</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design"
+            value="Facebook Post"
+            id="facebook-post"
+          />
+          <label class="font-100" for="facebook-post">Facebook Post</label>
+        </div>
+      </div>
+
+      <div class="tab nbo fade-in" id="nbo">
+        <p class="sub-heading font-400">NBO Project</p>
+        <div class="item">
+          <p class="sub-heading font-300">Web Design:</p>
+        </div>
+        <div class="item">
+          <input
+            type="radio"
+            name="web_design__nbo"
+            value="Basic"
+            id="basic__nbo"
+          />
+          <label for="basic__nbo" class="font-100">Basic</label>
+        </div>
+        <div class="item">
+          <input
+            type="radio"
+            name="web_design__nbo"
+            value="Standard"
+            id="standard__nbo"
+          />
+          <label for="standard__nbo" class="font-100">Standard</label>
+        </div>
+        <div class="item">
+          <input
+            type="radio"
+            name="web_design__nbo"
+            value="Premium"
+            id="premium__nbo"
+          />
+          <label for="premium__nbo" class="font-100">Premium</label>
+        </div>
+
+        <div class="item">
+          <p class="sub-heading font-300">Graphic Design:</p>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design__nbo"
+            value="Logo"
+            id="logo__nbo"
+          />
+          <label class="font-100" for="logo__nbo">Logo</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design__nbo"
+            value="Flyer"
+            id="flyer__nbo"
+          />
+          <label class="font-100" for="flyer__nbo">Flyer</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design__nbo"
+            value="Poster"
+            id="poster__nbo"
+          />
+          <label class="font-100" for="poster__nbo">Poster</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design__nbo"
+            value="Brochure"
+            id="brochure__nbo"
+          />
+          <label class="font-100" for="brochure__nbo">Brochure</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design__nbo"
+            value="Business Cards"
+            id="business-cards__nbo"
+          />
+          <label class="font-100" for="business-cards__nbo"
+            >Business Cards</label
+          >
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design__nbo"
+            value="Catalogue"
+            id="catalogue__nbo"
+          />
+          <label class="font-100" for="catalogue__nbo">Catalogue</label>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
+            name="graphic_design__nbo"
+            value="Menu"
+            id="menu__nbo"
+          />
+          <label class="font-100" for="menu__nbo">Menu</label>
+        </div>
+      </div>
+      <div class="tab order-received fade-in" id="order-received">
+        <img src="images/check-circle.svg" alt="" />
+        <p class="sub-heading font-400">Order Received.</p>
+        <p class="font-300">
+          We will contact you shortly for further information.
+        </p>
+      </div>
+
+      <button type="button" id="button" class="btn btn-primary fade-in">
+        Next
+      </button>
+      <span id="errMessage" class="font-300 errMessage"></span>
+    </form>
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('button');
+  const project = document.getElementById('project');
+  const errMessage = document.getElementById('errMessage');
+
+  button.addEventListener('click', () => {
+    const value = project.value;
+    const mainTab = document.querySelector('.main-tab');
+    const selectedTab = document.querySelector('#' + value);
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    if (checkName(name) === false) {
+      errMessage.innerHTML = 'Enter a valid Name';
+      document.getElementById('name').focus();
+    } else if (checkEmail(email) === false) {
+      errMessage.innerHTML = 'Enter a valid Email';
+      document.getElementById('email').focus();
+    } else {
+      errMessage.innerHTML = '';
+      mainTab.style.display = 'none';
+      selectedTab.style.display = 'flex';
+      button.innerHTML = 'Order';
+
+      if (value === 'web-design') {
+        const web_design = document.getElementsByName('web_design');
+        web_design.forEach((e) => {
+          if (!e.checked) {
+            errMessage.innerHTML = 'Select a Project';
+          } else {
+            button.setAttribute('type', 'submit');
+          }
+        });
+      } else if (value === 'graphic-design') {
+        const graphic_design = document.getElementsByName('graphic_design');
+        graphic_design.forEach((e) => {
+          if (!e.checked) {
+            errMessage.innerHTML = 'Select a Project';
+          } else {
+            button.setAttribute('type', 'submit');
+          }
+        });
+      } else {
+        const nbo_web_design = document.getElementsByName('web_design__nbo');
+        const nbo_graphic_design = document.getElementsByName(
+          'graphic_design__nbo'
+        );
+        nbo_web_design.forEach((e) => {
+          if (!e.checked) {
+            errMessage.innerHTML = 'Select a Web Design Project';
+          } else {
+            nbo_graphic_design.forEach((ev) => {
+              if (!ev.checked) {
+                errMessage.innerHTML = 'Select a Graphic Design Project';
+              } else {
+                button.setAttribute('type', 'submit');
+              }
+            });
+          }
+        });
+      }
+    }
+
+    button.addEventListener('click', () => {
+      if (button.getAttribute('type') === 'submit') {
+        button.style.display = 'none';
+        errMessage.style.display = 'none';
+        selectedTab.style.display = 'none';
+
+        document.getElementById('order-received').style.display = 'flex';
+      }
+    });
+  });
+  const checkName = (name) => {
+    let valid = /^[a-zA-Z]{3,}$/.test(name);
+    if (!valid) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  const checkEmail = (email) => {
+    let valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+    if (!valid) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+</script>
+
+<%- include('partials/footer.ejs') %>
