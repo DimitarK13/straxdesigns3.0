@@ -355,6 +355,7 @@ label {
   left: 0.5em;
   font-size: 2rem;
   cursor: pointer;
+  color: var(--dark-clr);
   transform: rotate(45deg);
   transition: transform 250ms var(--cubic-bezier);
 }
