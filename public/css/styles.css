@@ -310,26 +310,26 @@ label {
 }
 
 .nav-toggle .line {
-  width: 25px;
-  height: 3.5px;
+  width: 20px;
+  height: 3px;
   background-color: var(--dark-clr);
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   border-radius: 100vw;
   transition: width 500ms var(--cubic-bezier);
 }
 
 .nav-toggle .line:nth-child(2) {
-  width: 12.5px;
+  width: 10px;
 }
 
 .nav-toggle .line:nth-child(3) {
-  width: 20px;
+  width: 15px;
   margin-bottom: 0;
 }
 
 .nav-toggle:hover .line,
 .nav-toggle:focus .line {
-  width: 25px;
+  width: 20px;
 }
 
 .nav {
