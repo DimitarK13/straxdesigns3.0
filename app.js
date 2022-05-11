@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/orderAproject');
+mongoose.connect(
+  'mongodb+srv://dimiK:DimitarK@cluster0.btp64.mongodb.net/orderAproject'
+);
 
 const projectSchema = new mongoose.Schema({
   name: {
