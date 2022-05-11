@@ -5,7 +5,7 @@
     <div class="hero">
       <h1 class="heading gradient-text fade-in">Order a Project</h1>
     </div>
-    <form action="/" method="post" class="fade-in">
+    <form action="/" method="post" class="fade-in" id="form">
       <div class="main-tab fade-in">
         <label for="name" class="sub-heading font-400">Your Name:</label>
         <input
@@ -13,7 +13,7 @@
           type="text"
           name="name"
           id="name"
-          placeholder="Name"
+          placeholder="James"
         />
         <label for="email" class="sub-heading font-400">Your Email:</label>
         <input
@@ -21,7 +21,7 @@
           type="email"
           name="email"
           id="email"
-          placeholder="Email"
+          placeholder="james@gmail.com"
         />
         <label for="project" class="sub-heading font-400">Project Type:</label>
         <select name="project" id="project" class="input_order-a-project">
@@ -238,110 +238,114 @@
           <label class="font-100" for="menu__nbo">Menu</label>
         </div>
       </div>
-      <div class="tab order-received fade-in" id="order-received">
-        <img src="Images/check-circle.svg" alt="" />
-        <p class="sub-heading font-400">Order Received.</p>
-        <p class="font-300">
-          We will contact you shortly for further information.
-        </p>
-      </div>
 
       <button type="button" id="button" class="btn btn-primary">Next</button>
-      <span id="errMessage" class="font-300 errMessage"></span>
+      <span id="errMessage" class="font-100 errMessage"></span>
     </form>
+    <div class="tab order-received fade-in" id="order-received">
+      <img src="Images/check-circle.svg" alt="" />
+      <p class="sub-heading font-400">Order Received.</p>
+      <p class="font-300">
+        We will contact you shortly for further information.
+      </p>
+    </div>
   </div>
 </div>
 
 <script>
-  const button = document.getElementById('button');
-  const project = document.getElementById('project');
-  const errMessage = document.getElementById('errMessage');
+  const button = document.querySelector('#button');
+  const project = document.querySelector('#project');
+  const errMessage = document.querySelector('#errMessage');
 
   button.addEventListener('click', () => {
     const value = project.value;
     const mainTab = document.querySelector('.main-tab');
     const selectedTab = document.querySelector('#' + value);
+    const name = document.querySelector('#name').value;
+    const email = document.querySelector('#email').value;
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+    if (!checkName(name)) {
+      return;
+    }
 
-    if (checkName(name) === false) {
-      errMessage.innerHTML = 'Enter a valid Name';
-      document.getElementById('name').focus();
-    } else if (checkEmail(email) === false) {
-      errMessage.innerHTML = 'Enter a valid Email';
-      document.getElementById('email').focus();
-    } else {
-      errMessage.innerHTML = '';
-      mainTab.style.display = 'none';
-      selectedTab.style.display = 'flex';
-      button.innerHTML = 'Order';
+    if (!checkEmail(email)) {
+      return;
+    }
 
-      if (value === 'web-design') {
-        const web_design = document.getElementsByName('web_design');
-        web_design.forEach((e) => {
-          if (!e.checked) {
-            errMessage.innerHTML = 'Select a Project';
-          } else {
-            button.setAttribute('type', 'submit');
-          }
-        });
-      } else if (value === 'graphic-design') {
-        const graphic_design = document.getElementsByName('graphic_design');
-        graphic_design.forEach((e) => {
-          if (!e.checked) {
-            errMessage.innerHTML = 'Select a Project';
-          } else {
-            button.setAttribute('type', 'submit');
-          }
-        });
-      } else {
-        const nbo_web_design = document.getElementsByName('web_design__nbo');
-        const nbo_graphic_design = document.getElementsByName(
-          'graphic_design__nbo'
-        );
-        nbo_web_design.forEach((e) => {
-          if (!e.checked) {
-            errMessage.innerHTML = 'Select a Web Design Project';
-          } else {
-            nbo_graphic_design.forEach((ev) => {
-              if (!ev.checked) {
-                errMessage.innerHTML = 'Select a Graphic Design Project';
-              } else {
-                button.setAttribute('type', 'submit');
-              }
-            });
-          }
-        });
-      }
+    mainTab.style.display = 'none';
+    selectedTab.style.display = 'flex';
+    button.innerHTML = 'Order';
+
+    if (value === 'web-design') {
+      const web_design = document.getElementsByName('web_design');
+      web_design.forEach((e) => {
+        if (!e.checked) {
+          errMessage.innerHTML = 'Select a Project';
+          return;
+        } else {
+          button.setAttribute('type', 'submit');
+        }
+      });
+    }
+
+    if (value === 'graphic-design') {
+      const graphic_design = document.getElementsByName('graphic_design');
+      graphic_design.forEach((e) => {
+        if (!e.checked) {
+          errMessage.innerHTML = 'Select a Project';
+          return;
+        } else {
+          button.setAttribute('type', 'submit');
+        }
+      });
+    }
+
+    if (value === 'nbo') {
+      const nbo_web_design = document.getElementsByName('web_design__nbo');
+      const nbo_graphic_design = document.getElementsByName(
+        'graphic_design__nbo'
+      );
+      nbo_web_design.forEach((e) => {
+        if (!e.checked) {
+          errMessage.innerHTML = 'Select a Web Design Project';
+        } else {
+          nbo_graphic_design.forEach((e) => {
+            if (!e.checked) {
+              errMessage.innerHTML = 'Select a Graphic Design Project';
+            } else {
+              button.setAttribute('type', 'submit');
+            }
+          });
+        }
+      });
     }
 
     button.addEventListener('click', () => {
       if (button.getAttribute('type') === 'submit') {
-        button.style.display = 'none';
-        errMessage.style.display = 'none';
-        selectedTab.style.display = 'none';
-
-        document.getElementById('order-received').style.display = 'flex';
+        document.querySelector('#form').style.display = 'none';
+        document.querySelector('#order-received').style.display = 'flex';
       }
     });
   });
+
   const checkName = (name) => {
     let valid = /^[a-zA-Z]{3,}$/.test(name);
     if (!valid) {
+      document.querySelector('#name').focus();
+      errMessage.innerHTML = 'Enter a Valid Name';
       return false;
-    } else {
-      return true;
     }
+    return true;
   };
 
   const checkEmail = (email) => {
     let valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     if (!valid) {
+      document.querySelector('#email').focus();
+      errMessage.innerHTML = 'Enter a Valid Email';
       return false;
-    } else {
-      return true;
     }
+    return true;
   };
 </script>
 

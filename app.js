@@ -83,7 +83,7 @@ app.post('/', (req, res) => {
         }
       });
     });
-  } else {
+  } else if (project === 'nbo') {
     pool.getConnection((err, connection) => {
       if (err) throw err;
       console.log('Connected');
