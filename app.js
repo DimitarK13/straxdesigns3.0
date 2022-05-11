@@ -1,20 +1,43 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
-const mysql = require('mysql');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/orderAproject');
+
+const projectSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  project: {
+    type: String,
+    required: true,
+  },
+  webDesignProject: {
+    type: String,
+  },
+  graphicDesignProject: {
+    type: Array,
+  },
+  nbo_webDesignProject: {
+    type: String,
+  },
+  nbo_graphicDesignProject: {
+    type: Array,
+  },
+});
+
+const Project = mongoose.model('Project', projectSchema);
 
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
-const pool = mysql.createPool({
-  connectionLimit: 10,
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'order-a-project',
-});
 
 app.get('/', (req, res) => {
   res.render('index', { title: 'Strax Designs' });
@@ -45,60 +68,17 @@ app.get('/terms-of-use', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  const project = req.body.project;
-  const webDesignProject = req.body.web_design;
-  const graphicDesignProject = req.body.graphic_design;
-  const nbo_webDesignProject = req.body.web_design__nbo;
-  const nbo_graphicDesignProject = req.body.graphic_design__nbo;
+  const newProject = new Project({
+    name: req.body.name,
+    email: req.body.email,
+    project: req.body.project,
+    webDesignProject: req.body.web_design || null,
+    graphicDesignProject: req.body.graphic_design || null,
+    nbo_webDesignProject: req.body.web_design__nbo || null,
+    nbo_graphicDesignProject: req.body.graphic_design__nbo || null,
+  });
 
-  if (project === 'web-design') {
-    pool.getConnection((err, connection) => {
-      if (err) throw err;
-      console.log('Connected');
-
-      let sql = `INSERT INTO projects (name, email, project, project_type) VALUES ('${name}', '${email}', '${project}', '${webDesignProject}')`;
-      connection.query(sql, (err, result) => {
-        connection.release();
-        if (!err) {
-          console.log('Inserted');
-        } else {
-          console.log(err);
-        }
-      });
-    });
-  } else if (project === 'graphic-design') {
-    pool.getConnection((err, connection) => {
-      if (err) throw err;
-      console.log('Connected');
-
-      let sql = `INSERT INTO projects (name, email, project, project_type) VALUES ('${name}', '${email}', '${project}', '${graphicDesignProject}')`;
-      connection.query(sql, (err, result) => {
-        connection.release();
-        if (!err) {
-          console.log('Inserted');
-        } else {
-          console.log(err);
-        }
-      });
-    });
-  } else if (project === 'nbo') {
-    pool.getConnection((err, connection) => {
-      if (err) throw err;
-      console.log('Connected');
-
-      let sql = `INSERT INTO projects (name, email, project, project_type) VALUES ('${name}', '${email}', '${project}', '${nbo_webDesignProject} ${nbo_graphicDesignProject}')`;
-      connection.query(sql, (err, result) => {
-        connection.release();
-        if (!err) {
-          console.log('Inserted');
-        } else {
-          console.log(err);
-        }
-      });
-    });
-  }
+  newProject.save();
 
   setTimeout(() => {
     res.redirect('/');
