@@ -10,7 +10,7 @@
   --fs-500: 1.5rem;
   --fs-700: 2.5rem;
 
-  --cubic-bezier: cubic-bezier(0.99, -0.13, 0.65, 0.81);
+  --cubic-bezier: cubic-bezier(0.83, 0.08, 0.59, 0.35);
 }
 
 @media (min-width: 800px) {
@@ -483,16 +483,15 @@ label {
 }
 
 .flex-logos {
-  margin: 7.5rem auto;
+  margin-top: 5rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6rem;
+  gap: 2.5rem;
+  overflow-x: hidden;
   justify-content: center;
-  align-items: center;
 }
 
 .flex-logo {
-  width: 75px;
+  width: calc(10% - 2.5rem);
   filter: opacity(0.5) grayscale(1);
 }
 
@@ -810,5 +809,9 @@ label {
 
   .flex-big > * {
     flex: 1 1 100%;
+  }
+
+  .flex-logo {
+    animation: none;
   }
 }
