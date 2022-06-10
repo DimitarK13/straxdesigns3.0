@@ -485,14 +485,15 @@ label {
 .flex-logos {
   margin-top: 5rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 2.5rem;
   overflow-x: hidden;
   justify-content: center;
 }
 
 .flex-logo {
-  width: calc(10% - 2.5rem);
-  filter: opacity(0.5) grayscale(1);
+  width: 2.5rem;
+  filter: opacity(0.65) grayscale(1);
 }
 
 .card-mini__gd img {
