@@ -653,16 +653,31 @@ label {
 }
 
 .input_order-a-project {
+  padding: 0.25em 0.5em;
   width: 100%;
   margin-bottom: 1em;
   color: var(--dark-clr);
-  border-bottom: 1.5px solid var(--dark-clr);
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(126, 126, 126);
+  border-radius: 3px;
+  transition: border 300ms ease-in-out;
+}
+
+.input_order-a-project:focus {
+  border: 2px solid var(--dark-clr);
 }
 
 .errMessage {
-  display: inline-block;
-  color: red;
+  color: rgb(215, 8, 8);
+  border-radius: 100vw;
+  padding: 0.25em 1em;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(126, 126, 126);
   font-weight: 500;
+}
+
+.errMessage:empty {
+  display: none;
 }
 
 .order-received {
