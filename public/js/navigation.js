@@ -13,5 +13,5 @@ navClose.addEventListener('click', () => {
   nav.style.transform = 'translateX(-101%)';
   setTimeout(() => {
     nav.style.display = 'none';
-  }, 1000);
+  }, 400);
 });
