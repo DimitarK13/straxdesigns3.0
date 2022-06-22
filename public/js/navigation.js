@@ -3,9 +3,9 @@ const navClose = document.querySelector('#nav-close');
 const nav = document.querySelector('#nav');
 
 navToggle.addEventListener('click', () => {
-  nav.style.transform = 'translateX(0)';
+  nav.setAttribute('opened', 'true');
 });
 
 navClose.addEventListener('click', () => {
-  nav.style.transform = 'translateX(-101%)';
+  nav.setAttribute('opened', 'false');
 });

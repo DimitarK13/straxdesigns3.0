@@ -332,9 +332,15 @@ label {
   backdrop-filter: blur(0.25em);
   -webkit-backdrop-filter: blur(0.25em);
   box-shadow: 2px 2px 0.75rem rgba(0 0 0 / 0.2);
-
-  transform: translateX(-101%);
   transition: transform 350ms var(--cubic-bezier);
+}
+
+.nav[opened='false'] {
+  transform: translateX(-100%);
+}
+
+.nav[opened='true'] {
+  transform: translateX(0);
 }
 
 .nav-close {
