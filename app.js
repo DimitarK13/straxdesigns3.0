@@ -16,6 +16,9 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  discount: {
+    type: String,
+  },
   project: {
     type: String,
     required: true,
@@ -73,6 +76,7 @@ app.post('/', (req, res) => {
   const newProject = new Project({
     name: req.body.name,
     email: req.body.email,
+    discount: req.body.discount,
     project: req.body.project,
     webDesignProject: req.body.web_design || null,
     graphicDesignProject: req.body.graphic_design || null,

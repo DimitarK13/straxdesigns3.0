@@ -118,6 +118,18 @@ label {
   opacity: 1;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
+.discount {
+  margin-top: 2rem;
+}
+
+.discount input {
+  width: 100px;
+}
+
 .btn {
   display: inline-block;
   margin: 4em 2em 0 0;
