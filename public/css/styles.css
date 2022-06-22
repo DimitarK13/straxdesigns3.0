@@ -325,7 +325,7 @@ label {
 .nav {
   position: fixed;
   inset: 0;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: rgba(255 255 255 / 0.9);
@@ -364,6 +364,10 @@ label {
 .nav-link:focus {
   background-color: var(--dark-clr);
   color: #fff;
+}
+
+.nav-link:focus .nav {
+  transform: translateX(0);
 }
 
 .nav-link:hover p,
