@@ -6,6 +6,7 @@
   --light-clr: hsl(255, 0%, 100%);
 
   --fs-100: 1rem;
+  --fs-200: 1rem;
   --fs-300: 1.125rem;
   --fs-400: 1.25rem;
   --fs-500: 1.5rem;
@@ -16,6 +17,7 @@
 @media (min-width: 800px) {
   :root {
     --fs-100: 1.1rem;
+    --fs-200: 1.2rem;
     --fs-300: 1.3rem;
     --fs-400: 2.25rem;
     --fs-500: 2.25rem;
@@ -66,6 +68,7 @@ li {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -356,6 +359,10 @@ label {
   font-size: var(--fs-100);
 }
 
+.font-200 {
+  font-size: var(--fs-200);
+}
+
 .font-300 {
   font-size: var(--fs-300);
 }
@@ -370,6 +377,10 @@ label {
 
 .text-55 {
   max-width: 55ch;
+}
+
+.grey-text {
+  color: hsl(0, 0%, 50%);
 }
 
 /* --------------------- END HEADINGS AND FONTS ---------------------- */
@@ -475,11 +486,10 @@ label {
   margin: 5rem 0;
 }
 
-.flex-big {
+.flex {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 2rem 0;
   gap: 2.5rem;
@@ -577,42 +587,63 @@ label {
 
 /* --------------------------- ORDER A PROJECT ----------------------------------- */
 
+#form .btn {
+  margin-top: 1rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
 .tab {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   display: none;
 }
 
-.tab label {
-  margin-left: 0.65em;
+.tab-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 1.5rem;
 }
 
-.item {
-  flex: 1 0 100%;
+.item-100 {
+  flex: 1 1 100%;
 }
 
-.input_order-a-project {
-  padding: 0.25em 0.5em;
+.item-50 {
+  min-width: 250px;
+  flex: 1 1 calc(50% - 0.5rem);
+}
+
+.order-a-project-input {
+  padding: 0.4em 0.6em;
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 1.5rem;
   color: var(--dark-clr);
-  background-color: rgb(245, 245, 245);
   border: 1px solid rgb(126, 126, 126);
-  border-radius: 3px;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 5px rgba(0 0 0 / 0.2);
   transition: border 300ms ease-in-out;
 }
 
-.input_order-a-project:focus {
+.order-a-project-input:focus {
   border: 2px solid var(--dark-clr);
+}
+
+.order-a-project-label {
+  color: var(--primary-clr);
+  font-size: var(--fs-300);
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  width: 100%;
 }
 
 .errMessage {
   color: rgb(215, 8, 8);
   border-radius: 100vw;
   padding: 0.25em 1em;
-  background-color: rgb(245, 245, 245);
   border: 1px solid rgb(126, 126, 126);
+  box-shadow: 2px 2px 5px rgba(0 0 0 / 0.2);
   font-weight: 500;
 }
 
@@ -844,12 +875,11 @@ label {
     flex-direction: row;
   }
 
-  .flex-big {
-    flex-direction: row;
-    gap: 5rem;
+  .flex {
+    flex-direction: row-reverse;
   }
 
-  .flex-big > * {
+  .flex > * {
     flex: 1 1 100%;
   }
 }

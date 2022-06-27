@@ -23,16 +23,16 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  webDesignProject: {
+  website: {
     type: String,
   },
-  graphicDesignProject: {
+  logo: {
+    type: String,
+  },
+  graphicDesign: {
     type: Array,
   },
-  nbo_webDesignProject: {
-    type: String,
-  },
-  nbo_graphicDesignProject: {
+  nbo: {
     type: Array,
   },
 });
@@ -78,10 +78,10 @@ app.post('/', (req, res) => {
     email: req.body.email,
     discount: req.body.discount,
     project: req.body.project,
-    webDesignProject: req.body.web_design || null,
-    graphicDesignProject: req.body.graphic_design || null,
-    nbo_webDesignProject: req.body.web_design__nbo || null,
-    nbo_graphicDesignProject: req.body.graphic_design__nbo || null,
+    website: req.body.website || null,
+    logo: req.body.logo || null,
+    graphicDesign: req.body.graphic_design || null,
+    nbo: req.body.nbo || null,
   });
 
   newProject.save();
