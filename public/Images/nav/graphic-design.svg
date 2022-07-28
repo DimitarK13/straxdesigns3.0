@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 650 612" style="enable-background:new 0 0 650 612;" xml:space="preserve">
+	 viewBox="0 0 73.3 56.9" style="enable-background:new 0 0 73.3 56.9;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#9900FF;}
+	.st0{fill:none;stroke:#8F1E8B;stroke-width:2;stroke-miterlimit:10;}
 </style>
 <g>
-	<path class="st0" d="M605,543.5H63.3c-33.2,0-55.8-33.5-43.4-64.3L179.6,82.4c7.1-17.7,32.3-17.5,39.1,0.3l142.1,371.8
-		c5.4,14.1,24.8,15.7,32.4,2.7l92.5-157.6c9-15.4,31.5-14.9,39.9,0.8l105.9,198.9C642.1,519.4,627.6,543.5,605,543.5z"/>
-	<circle class="st0" cx="568" cy="123.7" r="37.5"/>
+	<path class="st0" d="M67.7,54.3H9.1c-3.6,0-6-3.6-4.7-7L21.7,4.4c0.8-1.9,3.5-1.9,4.2,0l15.4,40.2c0.6,1.5,2.7,1.7,3.5,0.3l10-17.1
+		c1-1.7,3.4-1.6,4.3,0.1l11.5,21.5C71.7,51.7,70.1,54.3,67.7,54.3z"/>
+	<circle class="st0" cx="63.7" cy="8.8" r="4.1"/>
 </g>
 </svg>
